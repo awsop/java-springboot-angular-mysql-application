@@ -1,0 +1,3 @@
+/root/springboot-angular8-crud-example/registration-service/src/main/java/com/javatechie/reg/service/api/RegistrationServiceApplication.java
+/root/springboot-angular8-crud-example/registration-service/src/main/java/com/javatechie/reg/service/api/model/User.java
+/root/springboot-angular8-crud-example/registration-service/src/main/java/com/javatechie/reg/service/api/dao/UserRepository.java

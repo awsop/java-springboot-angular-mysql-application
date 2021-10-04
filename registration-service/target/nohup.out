@@ -1,0 +1,645 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.4.RELEASE)
+
+2021-10-04 17:35:39.098  INFO 32228 --- [           main] c.j.r.s.a.RegistrationServiceApplication : Starting RegistrationServiceApplication v0.0.1-SNAPSHOT on ip-172-31-39-20.us-west-2.compute.internal with PID 32228 (/root/springboot-angular8-crud-example/registration-service/target/registration-service-0.0.1-SNAPSHOT.jar started by root in /root/springboot-angular8-crud-example/registration-service/target)
+2021-10-04 17:35:39.102  INFO 32228 --- [           main] c.j.r.s.a.RegistrationServiceApplication : No active profile set, falling back to default profiles: default
+2021-10-04 17:35:40.337  INFO 32228 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-10-04 17:35:40.409  INFO 32228 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62ms. Found 1 repository interfaces.
+2021-10-04 17:35:40.956  INFO 32228 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$25a3194a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-10-04 17:35:41.485  INFO 32228 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2021-10-04 17:35:41.534  INFO 32228 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-04 17:35:41.535  INFO 32228 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-10-04 17:35:41.764  INFO 32228 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-04 17:35:41.764  INFO 32228 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2594 ms
+2021-10-04 17:35:42.007  INFO 32228 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-04 17:35:42.492  INFO 32228 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-04 17:35:42.571  INFO 32228 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-10-04 17:35:42.701  INFO 32228 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2021-10-04 17:35:42.702  INFO 32228 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2021-10-04 17:35:42.979  INFO 32228 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-10-04 17:35:43.244  INFO 32228 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-04 17:35:44.008  INFO 32228 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-04 17:35:44.885  INFO 32228 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-04 17:35:44.953  WARN 32228 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-04 17:35:45.252  INFO 32228 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2021-10-04 17:35:45.260  INFO 32228 --- [           main] c.j.r.s.a.RegistrationServiceApplication : Started RegistrationServiceApplication in 6.861 seconds (JVM running for 7.395)
+2021-10-04 17:35:59.224  INFO 32228 --- [nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-04 17:35:59.224  INFO 32228 --- [nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-04 17:35:59.233  INFO 32228 --- [nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2021-10-04 17:35:59.306  INFO 32228 --- [nio-9090-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+Hibernate: select user0_.id as id1_0_, user0_.domain as domain2_0_, user0_.email as email3_0_, user0_.experience as experien4_0_, user0_.name as name5_0_ from user_reg_tbl user0_
+Hibernate: select user0_.id as id1_0_, user0_.domain as domain2_0_, user0_.email as email3_0_, user0_.experience as experien4_0_, user0_.name as name5_0_ from user_reg_tbl user0_
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: insert into user_reg_tbl (domain, email, experience, name, id) values (?, ?, ?, ?, ?)
+Mon Oct 04 18:05:03 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:05:04 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:05:08 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:05:10 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:05:15 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:05:22 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:05:27 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:05:30 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:05:34 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:05:38 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: insert into user_reg_tbl (domain, email, experience, name, id) values (?, ?, ?, ?, ?)
+Mon Oct 04 18:34:26 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:34:27 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:34:39 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:34:52 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:34:55 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:34:57 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:35:06 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:35:14 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:35:15 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
+Mon Oct 04 18:35:22 UTC 2021 WARN: Caught while disconnecting...
+
+EXCEPTION STACK TRACE:
+
+
+
+** BEGIN NESTED EXCEPTION ** 
+
+javax.net.ssl.SSLException
+MESSAGE: closing inbound before receiving peer's close_notify
+
+STACKTRACE:
+
+javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:735)
+	at sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:714)
+	at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1319)
+	at com.mysql.cj.NativeSession.quit(NativeSession.java:182)
+	at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)
+	at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+** END NESTED EXCEPTION **
+
+
